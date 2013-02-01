@@ -34,7 +34,7 @@ class ArtistsController < ApplicationController
   def update
     @artist = Artist.find(params[:id])
 
-    if Band.find_by_id(params[:band_id]) != nil
+    if Band.find_by_id(params[:artist][:band_id]) != nil
       @artist.update_attributes(params[:artist])
       flash.notice = "Artist info has been updated!"
       redirect_to artist_url(@artist)
@@ -42,5 +42,12 @@ class ArtistsController < ApplicationController
       flash.notice = "Try again."
       redirect_to edit_artist_url(@artist)
     end
+  end
+
+  def destroy
+    Artist.find(params[:id]).destroy
+
+    flash.notice = "The artist was successfully destroyed >:)"
+    redirect_to artists_url
   end
 end

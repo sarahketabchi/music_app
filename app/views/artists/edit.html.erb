@@ -15,3 +15,6 @@
   <br><br>
   <%= f.submit %>
 <% end %>
+
+<br>
+<%= link_to "Destroy this artist :(",  artist_path(@artist), :method => :delete, confirm: "Really destroy this artist?" %>
