@@ -1,0 +1,13 @@
+<h1>Learn about this Rockstar!</h1>
+
+<p>
+  <%= "Name: #{@artist.name}" %>
+</p>
+<p>
+   Band:
+  <%= link_to "#{@artist.band.name}", band_url(@artist.band) %>
+</p>
+
+<%= link_to "Edit artist", edit_artist_url %>
+<br>
+<%= link_to "Back to all artists", artists_url %>

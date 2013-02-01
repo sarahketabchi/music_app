@@ -1,0 +1,13 @@
+<h1>Look at this Awesome Band</h1>
+
+<%= "Band Name: #{@band.name}" %>
+<br>
+<ul>
+  <% @artists.each do |artist| %>
+    <li><%= link_to artist.name, artist_path(artist) %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Edit the info for this band", edit_band_url %>
+<br>
+<%= link_to "Back to all bands", bands_url %>

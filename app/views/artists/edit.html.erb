@@ -1,0 +1,17 @@
+<h1>EDIT THE INFO ABOUT THIS ARTIST!!!!!!!!!!</h1>
+
+<%= form_for(@artist) do |f| %>
+  <ul>
+   <% @artist.errors.full_messages.each do |e| %>
+    <li><%= e %></li>
+   <% end %>
+  </ul>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :band_id %>
+  <%= f.text_field :band_id %>
+  <br><br>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,18 @@
+<h1>Welcome to the place where a new artist is born!</h1>
+
+<%= form_tag("/artists", :method => :post) do %>
+  <%= label_tag(:name, "Enter name:") %>
+  <%= text_field_tag(:name) %>
+  <br>
+  <%= label_tag(:band_id, "Enter band number:") %>
+  <%= text_field_tag(:band_id) %>
+  <br>
+  <%= submit_tag("Let them be born.") %>
+  <br>
+  <p> Bands to choose from: </p>
+  <% @bands.each do |band| %>
+    <%= "#{band.id}. #{band.name}" %>
+    <br>
+  <% end %>
+<% end %>
+

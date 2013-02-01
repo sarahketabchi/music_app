@@ -1,0 +1,13 @@
+<h1>Bands That Make You Boogie!</h1>
+
+<ul>
+  <% @bands.each do |band| %>
+    <li>
+      <%= link_to band.name, band_path(band) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Add another band", new_band_url %>
+<br>
+<%= link_to "Explore artists", artists_url %>
